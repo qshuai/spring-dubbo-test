@@ -1,0 +1,35 @@
+#spring:
+#  resources:
+#    add-mappings: false
+#  dubbo:
+#    consumer:
+#      filter: tracing,log,monitorFilter
+#      timeout: 3000
+#      check: false
+#    server: false
+#    registry:
+#      address: zookeeper://127.0.0.1:2181
+#      session: 3000
+#    provider:
+#      filter: tracing,log,monitorFilter
+#      timeout: 2000
+#      retries: 1
+#    protocol:
+#      name: dubbo
+#      port: 21964
+#    application:
+#      name: dubbo-test1
+#      qos-enable: false
+#    base-package: com.dubbo.test
+#server:
+#  port: 9090
+spring:
+  dubbo:
+    application:
+      name: cosumer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    scan: com.dubbo.test
+
+server:
+  port: 9090
